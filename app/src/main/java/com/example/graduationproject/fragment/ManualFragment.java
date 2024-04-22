@@ -152,6 +152,10 @@ public class ManualFragment extends Fragment {
         });
     }
 
+    private void readAndSetManual() {
+
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

@@ -37,6 +37,7 @@ import java.util.concurrent.TimeUnit;
 public class SignupActivity1 extends AppCompatActivity {
     private static final String TAG = "SignupActivity1";
     private ActivitySignup1Binding binding;
+    public static SignupActivity1 signupActivity1;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private String mVerificationId;
@@ -46,6 +47,7 @@ public class SignupActivity1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignup1Binding.inflate(getLayoutInflater());
+
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
@@ -57,10 +59,16 @@ public class SignupActivity1 extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        signupActivity1 = SignupActivity1.this;
+
         binding.pnumberInput.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
         binding.icBack.setOnClickListener(view -> {
             finish();
             overridePendingTransition(R.anim.none, R.anim.to_right_exit);
+        });
+        binding.icClose.setOnClickListener(view -> {
+            finish();
+            overridePendingTransition(R.anim.none, R.anim.to_down_exit);
         });
         binding.btnContinue.setOnClickListener(view -> {
             if (binding.pnumberInput.getText().length() != 13) {

@@ -20,12 +20,14 @@ import java.util.concurrent.TimeUnit;
 public class SignupActivity3 extends AppCompatActivity {
     private static final String TAG = "SignupActivity3";
     private ActivitySignup3Binding binding;
+    public static SignupActivity3 signupActivity3;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignup3Binding.inflate(getLayoutInflater());
+
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
@@ -33,12 +35,23 @@ public class SignupActivity3 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
+
+        signupActivity3 = SignupActivity3.this;
+        SignupActivity1 signupActivity1 = (SignupActivity1) SignupActivity1.signupActivity1;
+        SignupActivity2 signupActivity2 = (SignupActivity2) SignupActivity2.signupActivity2;
 
         binding.icBack.setOnClickListener(view -> {
             finish();
             overridePendingTransition(R.anim.none, R.anim.to_right_exit);
+        });
+        binding.icClose.setOnClickListener(view -> {
+            finish();
+            signupActivity1.finish();
+            signupActivity2.finish();
+            overridePendingTransition(R.anim.none, R.anim.to_down_exit);
         });
         binding.emailhasnotarrived.setOnClickListener(view -> {
             sendEmailVerification();

@@ -1,5 +1,6 @@
 package com.example.graduationproject;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import java.util.Map;
 public class SignupActivity2 extends AppCompatActivity {
     private static final String TAG = "SignupActivity2";
     private ActivitySignup2Binding binding;
+    public static SignupActivity2 signupActivity2;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private FirebaseFirestore db;
@@ -40,6 +42,7 @@ public class SignupActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignup2Binding.inflate(getLayoutInflater());
+
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
@@ -47,12 +50,21 @@ public class SignupActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
+        signupActivity2 = SignupActivity2.this;
+        SignupActivity1 signupActivity1 = (SignupActivity1) SignupActivity1.signupActivity1;
 
         binding.icBack.setOnClickListener(view -> {
             finish();
             overridePendingTransition(R.anim.none, R.anim.to_right_exit);
+        });
+        binding.icClose.setOnClickListener(view -> {
+            finish();
+            signupActivity1.finish();
+            overridePendingTransition(R.anim.none, R.anim.to_down_exit);
         });
         binding.btnContinue.setOnClickListener(view -> {
             email = binding.emailInput.getText().toString();

@@ -23,7 +23,7 @@ public class HomeFragment extends Fragment {
     private static final String TAG = "HomeFragment";
     private FragmentHomeBinding binding;
     private MainActivity mainActivity;
-    private String location;
+    private String address;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.refreshLocation.setOnClickListener(v -> {
-            binding.location.setText(location);
+            binding.location.setText(address);
             Log.d(TAG, "Location refreshed.");
         });
     }
@@ -67,12 +67,12 @@ public class HomeFragment extends Fragment {
     }
 
     // 위치 브로드캐스트 리시버
-    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            location = intent.getStringExtra("location");
-            binding.location.setText(location);
-            Log.d("receiver", "Got location: " + location);
+            address = intent.getStringExtra("address");
+            binding.location.setText(address);
+            Log.d("receiver", "Got address: " + address);
         }
     };
 }

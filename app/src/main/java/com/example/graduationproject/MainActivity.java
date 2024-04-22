@@ -25,7 +25,6 @@ import com.example.graduationproject.databinding.ActivityMainBinding;
 import com.example.graduationproject.fragment.CallFragment;
 import com.example.graduationproject.fragment.HomeFragment;
 import com.example.graduationproject.fragment.ManualFragment;
-import com.example.graduationproject.fragment.MapFragment;
 import com.example.graduationproject.fragment.MapsFragment;
 import com.example.graduationproject.fragment.MypageFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -110,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser == null) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         }

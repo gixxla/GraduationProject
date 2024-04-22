@@ -205,7 +205,7 @@ public class BackgroundLocationService extends Service implements LocationListen
         } else {
             Log.d(TAG, "위치 변경: 위도 = " + latitude + ", 경도 = " + longitude);
             Log.d(TAG, "주소: " + address);
-            broadcastUserLocation(address);
+            broadcastUserLocation(address, latitude, longitude);
         }
     }
     @SuppressLint("MissingPermission")
@@ -216,10 +216,12 @@ public class BackgroundLocationService extends Service implements LocationListen
     }
 
     // 현재 사용자 위치를 브로드캐스트
-    private void broadcastUserLocation(String address) {
+    private void broadcastUserLocation(String address, double latitude, double longitude) {
         Intent intent = new Intent("userLocation");
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        intent.putExtra("location", address);
+        intent.putExtra("address", address);
+        intent.putExtra("latitude", latitude);
+        intent.putExtra("longitude", longitude);
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
