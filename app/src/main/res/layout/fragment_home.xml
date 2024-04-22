@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/locationLayout"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp" >
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:layout_alignParentTop="true"
+            android:lineHeight="15sp"
+            android:text="@string/location"
+            android:textAppearance="@style/location"
+            android:gravity="bottom" />
+        <RelativeLayout
+            android:id="@+id/refreshLocation"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_toRightOf="@id/location">
+
+            <ImageButton
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_refresh"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/homeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="76dp"
+        android:lineHeight="31sp"
+        android:text="@string/homeTitle"
+        android:textAppearance="@style/homeTitle"
+        android:gravity="bottom" />
+    <RelativeLayout
+        android:id="@+id/disastermsgLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="211dp" >
+
+        <TextView
+            android:id="@+id/title_disastermsg"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:lineHeight="14.093sp"
+            android:text="@string/title_disastermsg"
+            android:textAppearance="@style/homeTitle2"
+            android:gravity="bottom" />
+        <ImageButton
+            android:id="@+id/ic_more"
+            android:layout_width="7dp"
+            android:layout_height="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="1dp"
+            android:layout_toRightOf="@id/title_disastermsg"
+            android:layout_marginLeft="6dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_more"/>
+        <!-- Auto layout, variables, and unit scale are not yet supported -->
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/disastermsg"
+        android:layout_width="0dp"
+        android:layout_height="153dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="244dp"
+        android:background="@drawable/disastermsg" />
+</RelativeLayout>

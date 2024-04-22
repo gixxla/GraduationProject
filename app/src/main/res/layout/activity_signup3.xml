@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity3">
+
+    <RelativeLayout
+        android:id="@+id/icBack"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp" >
+
+        <ImageButton
+            android:layout_width="10dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_back"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/icClose"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp" >
+
+        <ImageButton
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_close"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/signupTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="33dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="119dp"
+        android:lineHeight="29sp"
+        android:text="@string/signupTitle3"
+        android:textSize="24sp"
+        android:textAppearance="@style/title1"
+        android:gravity="bottom" />
+    <TextView
+        android:id="@+id/emailhasnotarrived"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="113dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="112dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="94dp"
+        android:text="@string/emailhasnotarrived"
+        android:textAppearance="@style/somethingiswrong"
+        android:gravity="center_horizontal"
+        />
+    <RelativeLayout
+        android:id="@+id/btnContinue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btn_continue" >
+
+        <TextView
+            android:id="@+id/btnContinuetext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:lineHeight="18.238sp"
+            android:text="@string/btncontinuetext"
+            android:textAppearance="@style/btncontinuetext"
+            android:gravity="center_horizontal|center_vertical" />
+    </RelativeLayout>
+</RelativeLayout>

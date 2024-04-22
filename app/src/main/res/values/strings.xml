@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GraduationProject</string>
+
+    <string name="loginTitle">휴대폰 번호를\n입력해주세요.</string>
+    <string name="signupTitle1">회원가입을 위해\n휴대폰 번호를 인증해주세요.</string>
+    <string name="signupTitle2">회원가입을 위해\n이메일과 비밀번호를 입력해주세요.</string>
+    <string name="signupTitle3">인증 메일이 발송되었습니다.\n메일함을 확인해주세요.</string>
+    <string name="signupTitle4">회원가입이\n완료되었습니다.</string>
+    <string name="signupContents1">추후 휴대폰 번호로 로그인이 불가능할 경우를 위해서예요.</string>
+    <string name="signupContents2">계속하기를 눌러 로그인을 진행해주세요.</string>
+    <string name="pnumber">휴대폰 번호</string>
+    <string name="vcode">인증번호</string>
+    <string name="email">이메일</string>
+    <string name="pw">비밀번호</string>
+    <string name="pwverify">비밀번호 확인</string>
+    <string name="btnagaintext">다시 받기</string>
+    <string name="warningmsgNumber">올바른 휴대폰 번호를 입력해주세요.</string>
+    <string name="warningmsgCode">잘못된 인증번호입니다.</string>
+    <string name="warningmsgEmail">올바른 이메일 주소를 입력해주세요.</string>
+    <string name="warningmsgPW">비밀번호는 영문과 숫자, 특수문자 중 2가지를 포함한 8~16자리로 이루어져야 합니다.</string>
+    <string name="warningmsgPWverify">비밀번호가 일치하지 않습니다.</string>
+    <string name="pnumberhaschanged">휴대폰 번호가 바뀌었나요?</string>
+    <string name="emailhasnotarrived">이메일이 도착하지 않았나요?</string>
+    <string name="btncontinuetext">계속하기</string>
+    <string name="btnHome">홈</string>
+    <string name="btnMap">지도</string>
+    <string name="btnManual">행동요령</string>
+    <string name="btnCall">긴급신고</string>
+    <string name="btnMyPage">내 정보</string>
+    <string name="homeTitle">사용자님,\n오늘도 좋은 하루 되세요!</string>
+    <string name="title_disastermsg">최근 재난문자</string>
+    <string name="location">위치 탐색 중</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

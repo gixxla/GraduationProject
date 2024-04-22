@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/btnHome"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/action_map"
+        android:icon="@drawable/ic_map"
+        android:title="@string/btnMap"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/action_manual"
+        android:icon="@drawable/ic_manual"
+        android:title="@string/btnManual"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/action_call"
+        android:icon="@drawable/ic_call"
+        android:title="@string/btnCall"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/action_mypage"
+        android:icon="@drawable/ic_mypage"
+        android:title="@string/btnMyPage"
+        android:enabled="true"/>
+</menu>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity2">
+
+    <RelativeLayout
+        android:id="@+id/icBack"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp" >
+
+        <ImageButton
+            android:layout_width="10dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_back"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/icClose"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp" >
+
+        <ImageButton
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_close"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/signuplayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="33dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="119dp" >
+
+        <TextView
+            android:id="@+id/signupTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:lineHeight="24sp"
+            android:text="@string/signupTitle2"
+            android:textAppearance="@style/title2" />
+        <TextView
+            android:id="@+id/signupContents1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="1dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="62dp"
+            android:text="@string/signupContents1"
+            android:textAppearance="@style/contents"
+            android:gravity="bottom" />
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="116dp"
+            android:text="@string/email"
+            android:textColor="#9D9C9C"
+            android:textAppearance="@style/contents" />
+        <EditText
+            android:id="@+id/emailInput"
+            style="@style/emailInput"
+            app:theme="@style/emailInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-1dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-1dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="128dp"
+            android:gravity="top"/>
+        <TextView
+            android:id="@+id/warningmsgEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="172dp"
+            android:text="@string/warningmsgEmail"
+            android:textAppearance="@style/warningmsg"
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="191dp"
+            android:text="@string/pw"
+            android:textColor="#9D9C9C"
+            android:textAppearance="@style/contents" />
+        <EditText
+            android:id="@+id/pwInput"
+            style="@style/pwInput"
+            app:theme="@style/pwInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-1dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-1dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="203dp"
+            android:gravity="top" />
+        <TextView
+            android:id="@+id/warningmsgPW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="247dp"
+            android:text="@string/warningmsgPW"
+            android:textSize="8sp"
+            android:textAppearance="@style/warningmsg"
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/pwverify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="265dp"
+            android:text="@string/pwverify"
+            android:textColor="#9D9C9C"
+            android:textAppearance="@style/contents" />
+        <EditText
+            android:id="@+id/pwverifyInput"
+            style="@style/pwInput"
+            app:theme="@style/pwInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-1dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-1dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="277dp"
+            android:gravity="top" />
+        <TextView
+            android:id="@+id/warningmsgPWverify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="321dp"
+            android:text="@string/warningmsgPWverify"
+            android:textAppearance="@style/warningmsg"
+            android:visibility="invisible"
+            android:gravity="bottom" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/btnContinue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btn_continue" >
+
+        <TextView
+            android:id="@+id/btnContinuetext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:lineHeight="18.238sp"
+            android:text="@string/btncontinuetext"
+            android:textAppearance="@style/btncontinuetext"
+            android:gravity="center_horizontal|center_vertical" />
+    </RelativeLayout>
+</RelativeLayout>

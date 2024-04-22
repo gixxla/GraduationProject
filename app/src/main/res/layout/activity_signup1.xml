@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".SignupActivity1">
+    <RelativeLayout
+        android:id="@+id/icBack"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp" >
+
+        <ImageButton
+            android:layout_width="10dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_back"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/icClose"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp" >
+
+        <ImageButton
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_close"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/pnumberLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="33dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="119dp" >
+
+        <TextView
+            android:id="@+id/signupTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:lineHeight="29sp"
+            android:text="@string/signupTitle1"
+            android:textSize="24sp"
+            android:textAppearance="@style/title1" />
+        <TextView
+            android:id="@+id/pnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="116dp"
+            android:text="@string/pnumber"
+            android:textColor="#9D9C9C"
+            android:textAppearance="@style/contents" />
+        <EditText
+            android:id="@+id/pnumberInput"
+            style="@style/pnumberInput"
+            app:theme="@style/pnumberInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="128dp"
+            android:gravity="top"/>
+        <TextView
+            android:id="@+id/warningmsgNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="172dp"
+            android:text="@string/warningmsgNumber"
+            android:textAppearance="@style/warningmsg"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/vcodeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="310dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/vcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="242dp"
+            android:layout_alignParentTop="true"
+            android:text="@string/vcode"
+            android:textColor="#9D9C9C"
+            android:textAppearance="@style/contents" />
+        <EditText
+            android:id="@+id/vcodeInput"
+            style="@style/vcodeInput"
+            app:theme="@style/vcodeInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-4dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="84dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:gravity="top"/>
+        <RelativeLayout
+            android:id="@+id/btnAgain"
+            android:layout_width="75dp"
+            android:layout_height="31dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp" >
+
+            <View
+                android:id="@+id/btnagainbox"
+                android:layout_width="75dp"
+                android:layout_height="31dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/btn_again" />
+            <TextView
+                android:id="@+id/btnagaintext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="13dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/intermedium"
+                android:lineHeight="12.435sp"
+                android:text="@string/btnagaintext"
+                android:textAppearance="@style/btnagaintext"
+                android:gravity="center_horizontal" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/warningmsgCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="1dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="198dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/intermedium"
+            android:lineHeight="9.119sp"
+            android:text="@string/warningmsgCode"
+            android:textAppearance="@style/warningmsg"
+            android:visibility="invisible"
+            android:gravity="bottom" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/btnContinue"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btn_continue" >
+
+        <TextView
+            android:id="@+id/btnContinuetext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:lineHeight="18.238sp"
+            android:text="@string/btncontinuetext"
+            android:textAppearance="@style/btncontinuetext"
+            android:gravity="center_horizontal|center_vertical" />
+    </RelativeLayout>
+</RelativeLayout>

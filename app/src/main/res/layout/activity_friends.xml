@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 친구 목록을 표시할 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friendsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp" />
+
+    <!-- 친구 추가 버튼 -->
+
+    <!-- 이름 설정 버튼 -->
+
+    <!-- 하단의 탭 버튼들 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addFriendFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="126dp"
+        android:contentDescription="친구 추가"
+        android:src="@drawable/ic_add" />
+
+    <Button
+        android:id="@+id/setNameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="295dp"
+        android:layout_marginBottom="67dp"
+        android:text="이름 설정" />
+
+    <LinearLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:layout_alignParentBottom="true">
+
+        <!-- 지도 탭 버튼 -->
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="지도" />
+
+        <!-- 친구 탭 버튼 -->
+        <Button
+            android:id="@+id/friendsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="친구" />
+
+        <!-- 재난 탭 버튼 -->
+        <Button
+            android:id="@+id/disasterButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="재난" />
+    </LinearLayout>
+
+</RelativeLayout>
