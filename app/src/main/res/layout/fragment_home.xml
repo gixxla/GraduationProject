@@ -12,7 +12,7 @@
         android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp" >
 
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="76dp"
         android:lineHeight="31sp"
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="17dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="211dp" >
 
@@ -85,16 +85,15 @@
             android:layout_marginLeft="6dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_more"/>
-        <!-- Auto layout, variables, and unit scale are not yet supported -->
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/disastermsg"
         android:layout_width="0dp"
         android:layout_height="153dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="20dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="18dp"
+        android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="244dp"
         android:background="@drawable/disastermsg" />

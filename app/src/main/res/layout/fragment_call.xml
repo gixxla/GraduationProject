@@ -5,10 +5,46 @@
     android:layout_height="match_parent"
     tools:context=".fragment.CallFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="긴급신고" />
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 경찰 호출 버튼 -->
+        <Button
+            android:id="@+id/button_police"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="경찰신고 112"
+            android:drawablePadding="8dp"
+            android:padding="16dp"
+            android:textColor="@android:color/white" />
+
+        <!-- 소방서 호출 버튼 -->
+        <Button
+            android:id="@+id/button_fire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="화재·구조·구급 119"
+            android:drawablePadding="8dp"
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/white" />
+
+        <!-- 긴급 의료 상담 버튼 -->
+        <Button
+            android:id="@+id/button_medical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="긴급 의료 상담 1339"
+            android:drawablePadding="8dp"
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/white" />
+
+        <!-- 추가하고 싶은 다른 버튼들을 여기에 배치합니다. -->
+
+    </LinearLayout>
 
 </FrameLayout>

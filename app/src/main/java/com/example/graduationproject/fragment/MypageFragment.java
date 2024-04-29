@@ -42,8 +42,8 @@ public class MypageFragment extends Fragment {
         // 뷰바인딩 초기화
         binding = FragmentMypageBinding.inflate(inflater, container, false);
 
-        binding.btnFriend.setOnClickListener(v -> fragmentManager.beginTransaction().replace(R.id.pageView, friendsFragment).addToBackStack(null).commit());
-        binding.btnLogout.setOnClickListener(v -> {
+        binding.friendManagement.setOnClickListener(v -> fragmentManager.beginTransaction().replace(R.id.pageView, friendsFragment).addToBackStack(null).commit());
+        binding.logout.setOnClickListener(v -> {
             mAuth.signOut();
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             mainActivity.overridePendingTransition(R.anim.from_down_enter, R.anim.none);
