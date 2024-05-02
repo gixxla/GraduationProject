@@ -41,15 +41,6 @@ public class MypageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // 뷰바인딩 초기화
         binding = FragmentMypageBinding.inflate(inflater, container, false);
-
-        binding.friendManagement.setOnClickListener(v -> fragmentManager.beginTransaction().replace(R.id.pageView, friendsFragment).addToBackStack(null).commit());
-        binding.logout.setOnClickListener(v -> {
-            mAuth.signOut();
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            mainActivity.overridePendingTransition(R.anim.from_down_enter, R.anim.none);
-            startActivity(intent);
-        });
-
         return binding.getRoot();
     }
 
@@ -57,6 +48,17 @@ public class MypageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentManager = getParentFragmentManager();
+        binding.friendManagement.setOnClickListener(v ->
+            fragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.from_right_enter, R.anim.to_left_exit)
+                    .replace(R.id.pageView, friendsFragment).addToBackStack(null).commit()
+        );
+        binding.logout.setOnClickListener(v -> {
+            mAuth.signOut();
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            mainActivity.overridePendingTransition(R.anim.from_down_enter, R.anim.none);
+            startActivity(intent);
+        });
     }
 
     @Override

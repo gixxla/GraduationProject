@@ -28,14 +28,21 @@ import com.example.graduationproject.databinding.FragmentMapsBinding;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraUpdate;
 import com.naver.maps.map.LocationTrackingMode;
@@ -43,15 +50,20 @@ import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.Marker;
+import com.naver.maps.map.overlay.OverlayImage;
 import com.naver.maps.map.util.FusedLocationSource;
 import com.naver.maps.map.util.MarkerIcons;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Document;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MapsFragment extends Fragment implements OnMapReadyCallback {
     private static final String TAG = "MapsFragment";
@@ -63,6 +75,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     private MapView mapView;
     private NaverMap mMap;
     private double latitude, longitude;
+    private ArrayList<String> friendsUid;
     private FusedLocationSource locationSource;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private static final float MAX_DISTANCE = 10000;
@@ -167,11 +180,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             double lat = location.getLatitude();
             double lng = location.getLongitude();
             mMap.moveCamera(CameraUpdate.scrollTo(new LatLng(lat, lng)));
-            mMap.moveCamera(CameraUpdate.zoomTo(16));
         });
+        mMap.moveCamera(CameraUpdate.zoomTo(16));
 
         loadAndAddShelterMarkers();
         loadAndAddAEDMarkers();
+        loadFriendsUid();
     }
 
     // 위치 브로드캐스트 리시버
@@ -268,56 +282,41 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         }).start();
     }
 
-    // 수정 중
-//    private void loadAndDisplayFriendsLocations() {
-//        user = mAuth.getCurrentUser();
-//        if (user != null) {
-//            String userUid = user.getUid();
-//            String[] friendsUid;
-//            DatabaseReference friendsRef = FirebaseDatabase.getInstance().getReference("users").child(myUid).child("friends");
-//
-//            friendsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                    for (DataSnapshot friendSnapshot : dataSnapshot.getChildren()) {
-//                        String friendUid = friendSnapshot.getKey();
-//
-//                        DatabaseReference friendLocationRef = FirebaseDatabase.getInstance().getReference("users").child(friendUid).child("location");
-//                        friendLocationRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot locationSnapshot) {
-//                                Double latitude = locationSnapshot.child("latitude").getValue(Double.class);
-//                                Double longitude = locationSnapshot.child("longitude").getValue(Double.class);
-//                                String name = locationSnapshot.child("name").getValue(String.class);
-//
-//                                if (latitude != null && longitude != null) {
-//                                    com.google.android.gms.maps.model.LatLng location = new com.google.android.gms.maps.model.LatLng(latitude, longitude);
-//
-//                                    // 사용자 정의 마커 이미지로 마커를 생성합니다.
-//                                    MarkerOptions markerOptions = new MarkerOptions()
-//                                            .position(location)
-//                                            .title(name)
-//                                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.custom_marker)); // 여기서 사용자 정의 이미지를 설정합니다.
-//
-//                                    mMap.addMarker(markerOptions);
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                                Log.e("MapsActivity", "데이터베이스 오류: " + databaseError.getMessage());
-//                            }
-//                        });
-//                    }
-//                }
-//
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError databaseError) {
-//                    Log.e("MapsActivity", "데이터베이스 오류: " + databaseError.getMessage());
-//                }
-//            });
-//        }
-//    }
+    private void loadFriendsUid() {
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            String userUid = user.getUid();
+            friendsUid = new ArrayList<>();
+
+            db.collection("users").document(userUid).collection("friends").get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        friendsUid.add(document.getId());
+                        Log.d(TAG, "friendUid: " + document.getId());
+                    }
+                    loadAndDisplayFriendsLocations();
+                }
+            });
+        }
+    }
+
+    private void loadAndDisplayFriendsLocations() {
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            for (int i = 0; i < friendsUid.size(); i++) {
+                DocumentReference friendsDocument = db.collection("users").document(friendsUid.get(i));
+                friendsDocument.get().addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Map friendData = task.getResult().getData();
+                        LatLng friendLocation = new LatLng((double) friendData.get("latitude"), (double) friendData.get("longitude"));
+                        Marker marker = new Marker(friendLocation, MarkerIcons.YELLOW);
+                        marker.setCaptionText(friendData.get("nickname").toString());
+                        marker.setMap(mMap);
+                    }
+                });
+            }
+        }
+    }
 
     @Override
     public void onDestroy() {
