@@ -30,7 +30,18 @@
     <string name="btnMyPage">내 정보</string>
     <string name="homeTitle">사용자님,\n오늘도 좋은 하루 되세요!</string>
     <string name="title_disastermsg">최근 재난문자</string>
+    <string name="title_nearbyshelter">가까운 대피소</string>
     <string name="location">위치 탐색 중</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nickname">사용자</string>
+    <string name="accountSettings">계정 설정</string>
+    <string name="personalInfo">개인정보 수정</string>
+    <string name="friendManagement">친구 관리</string>
+    <string name="alertSettings">알림 설정</string>
+    <string name="msgAlertSettings">재난문자 알림 설정</string>
+    <string name="logout">로그아웃</string>
+    <string name="secession">서비스 탈퇴</string>
+    <string name="friendAddedByUser">내가 추가한 친구</string>
+    <string name="friendWhoAddedUser">나를 추가한 친구</string>
+    <string name="friendName">친구</string>
+    <string name="friendPhoneNumber">010-0000-0000</string>
 </resources>

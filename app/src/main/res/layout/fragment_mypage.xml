@@ -4,24 +4,208 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".fragment.MypageFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="내 정보" />
-
-    <Button
-        android:id="@+id/btnFriend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/ellipse_1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:text="친구 관리" />
-    <Button
-        android:id="@+id/btnLogout"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="144dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="144dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="164dp"
+        android:lineHeight="31sp"
+        android:text="@string/nickname"
+        android:textAppearance="@style/homeTitle"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnFriend"
-        android:text="로그아웃" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="239dp"
+        android:lineHeight="19sp"
+        android:text="@string/accountSettings"
+        android:textAppearance="@style/settingTitle"
+        android:gravity="center_vertical" />
+
+    <RelativeLayout
+        android:id="@+id/personalInfo"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="279dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:lineHeight="19sp"
+            android:text="@string/personalInfo"
+            android:textAppearance="@style/settingTitle2"
+            android:gravity="center_vertical" />
+        <ImageButton
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_more"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/friendManagement"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="319dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:lineHeight="19sp"
+            android:text="@string/friendManagement"
+            android:textAppearance="@style/settingTitle2"
+            android:gravity="center_vertical" />
+        <ImageButton
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_more"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="370dp"
+        android:background="@drawable/line_mypage" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="393dp"
+        android:lineHeight="29sp"
+        android:text="@string/alertSettings"
+        android:textAppearance="@style/settingTitle"
+        android:gravity="center_vertical" />
+    <RelativeLayout
+        android:id="@+id/msgAlertSettings"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="433dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:lineHeight="19sp"
+            android:text="@string/msgAlertSettings"
+            android:textAppearance="@style/settingTitle2"
+            android:gravity="center_vertical" />
+        <ImageButton
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_more"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="484dp"
+        android:background="@drawable/line_mypage" />
+    <RelativeLayout
+        android:id="@+id/logout"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="506dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:lineHeight="19sp"
+            android:text="@string/logout"
+            android:textAppearance="@style/settingTitle2"
+            android:gravity="center_vertical" />
+        <ImageButton
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_more"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/secession"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="546dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:lineHeight="19sp"
+            android:text="@string/secession"
+            android:textAppearance="@style/settingTitle2"
+            android:gravity="center_vertical" />
+        <ImageButton
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_more"/>
+    </RelativeLayout>
 </RelativeLayout>
