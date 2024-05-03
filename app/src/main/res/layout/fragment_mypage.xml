@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".fragment.MypageFragment">
 
     <ImageView
@@ -51,7 +52,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="269dp" >
+        android:layout_marginTop="279dp" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,7 +80,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="304dp" >
+        android:layout_marginTop="319dp" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -103,7 +104,7 @@
         android:layout_height="1dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="355dp"
+        android:layout_marginTop="370dp"
         android:background="@drawable/line_mypage" />
     <TextView
         android:layout_width="wrap_content"
@@ -111,7 +112,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="378dp"
+        android:layout_marginTop="393dp"
         android:lineHeight="29sp"
         android:text="@string/alertSettings"
         android:textAppearance="@style/settingTitle"
@@ -125,7 +126,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="408dp" >
+        android:layout_marginTop="433dp" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -149,7 +150,7 @@
         android:layout_height="1dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="459dp"
+        android:layout_marginTop="484dp"
         android:background="@drawable/line_mypage" />
     <RelativeLayout
         android:id="@+id/logout"
@@ -160,7 +161,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="481dp" >
+        android:layout_marginTop="506dp" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -188,7 +189,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="516dp" >
+        android:layout_marginTop="546dp" >
 
         <TextView
             android:layout_width="wrap_content"

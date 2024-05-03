@@ -313,7 +313,7 @@ public class BackgroundLocationService extends Service implements LocationListen
         user = mAuth.getCurrentUser();
         if (user != null) {
             String userUid = user.getUid();
-           Map<String, Object> locationData = new HashMap<>();
+            Map<String, Object> locationData = new HashMap<>();
             if (generalRegionCode != null) locationData.put("generalRegionCode", generalRegionCode);
             if (specificRegionCode != null) locationData.put("specificRegionCode", specificRegionCode);
 

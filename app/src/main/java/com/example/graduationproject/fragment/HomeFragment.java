@@ -18,16 +18,29 @@ import android.view.ViewGroup;
 
 import com.example.graduationproject.MainActivity;
 import com.example.graduationproject.databinding.FragmentHomeBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeFragment extends Fragment {
     private static final String TAG = "HomeFragment";
     private FragmentHomeBinding binding;
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
+    private FirebaseFirestore db;
     private MainActivity mainActivity;
     private String address;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        db = FirebaseFirestore.getInstance();
     }
 
     @Override
@@ -45,6 +58,8 @@ public class HomeFragment extends Fragment {
             binding.location.setText(address);
             Log.d(TAG, "Location refreshed.");
         });
+
+        setNickname();
     }
 
     @Override
@@ -75,4 +90,23 @@ public class HomeFragment extends Fragment {
             Log.d("receiver", "Got address: " + address);
         }
     };
+
+    private void setNickname() {
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            String userUid = user.getUid();
+            db.collection("users").document(userUid).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        String nickname = document.getData().get("nickname").toString();
+                        binding.homeTitle.setText(nickname + "님,\n오늘도 좋은 하루 되세요!");
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                }
+            });
+        }
+    }
 }

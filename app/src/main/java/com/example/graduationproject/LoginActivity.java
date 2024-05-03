@@ -112,20 +112,17 @@ public class LoginActivity extends AppCompatActivity {
     private void checkUser(String phoneNumber) {
         Query queryPhoneNumber = db.collection("users").whereEqualTo("phoneNumber", phoneNumber);
         AggregateQuery countQuery = queryPhoneNumber.count();
-        countQuery.get(AggregateSource.SERVER).addOnCompleteListener(new OnCompleteListener<AggregateQuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<AggregateQuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    AggregateQuerySnapshot snapshot = task.getResult();
-                    Log.d(TAG, "Count: " + snapshot.getCount());
-                    if (snapshot.getCount() > 0) {
-                        getVerificationID(phoneNumber);
-                    } else {
-                        signupAlert();
-                    }
+        countQuery.get(AggregateSource.SERVER).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                AggregateQuerySnapshot snapshot = task.getResult();
+                Log.d(TAG, "Count: " + snapshot.getCount());
+                if (snapshot.getCount() > 0) {
+                    getVerificationID(phoneNumber);
                 } else {
-                    Log.d(TAG, "Exception: " + task.getException());
+                    signupAlert();
                 }
+            } else {
+                Log.d(TAG, "Exception: " + task.getException());
             }
         });
     }

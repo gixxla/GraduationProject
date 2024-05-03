@@ -9,7 +9,7 @@
     android:animateLayoutChanges="true"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/pageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -11,12 +11,12 @@
 
     <RelativeLayout
         android:id="@+id/icBack"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="12dp"
+        android:layout_marginLeft="14dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="14dp" >
+        android:layout_marginTop="16dp" >
 
         <ImageButton
             android:layout_width="10dp"
@@ -30,12 +30,12 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/icClose"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="14dp"
+        android:layout_marginRight="16dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="14dp" >
+        android:layout_marginTop="16dp" >
 
         <ImageButton
             android:layout_width="18dp"
